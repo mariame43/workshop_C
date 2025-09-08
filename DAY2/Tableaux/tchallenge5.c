@@ -5,7 +5,6 @@ int main() {
 
 
     int num , mini ;
-
     printf("entre numero : ");
     scanf("%d",&num);
     
