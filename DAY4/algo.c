@@ -9,8 +9,8 @@ struct joueur {
     char poste[50];
     char statut[50];
 };
-
-struct joueur joueurs[100] = {
+// Tableau nommé "joueurs" comprend 100 joueurs
+struct joueur joueurs[100] = { 
     {1, 10, 22, 15, "hakime", "ziach", "Attaquant", "Titulaire"},
     {2, 5, 25, 5, "achraf", "hakimi", "Défenseur", "Titulaire"},
     {3, 9, 30, 8, "ibrahime", "diaz", "Milieu", "Remplacement"},
@@ -21,7 +21,7 @@ struct joueur joueurs[100] = {
     {8, 9, 30, 8, "bilal", "khanose", "Milieu", "Remplacement"},
     {9, 1, 27, 0, "ayoub", "kaebi", "Gardien", "Titulaire"},
     {10, 11, 23, 12, "adam", "massina", "Attaquant", "Titulaire"},
-};;  // Tableau nommé "joueurs" comprend 100 joueurs
+}; 
 int nbjoueurs = 10;
 int id = 10;
 
@@ -148,7 +148,7 @@ void Afficher_joueur() {
                            joueurs[i].id, joueurs[i].nom, joueurs[i].prenom, joueurs[i].numeroMaillot,
                            joueurs[i].age, joueurs[i].buts, joueurs[i].statut,joueurs[i].poste);
                     trouve = 1;
-                    trouve++;
+                
                 }
             }
             if (trouve == 0) {
@@ -354,9 +354,6 @@ void Statistiques(){
     printf("Le joueur le plus jeune est : %s %s, Âge: %d\n", joueurs[minIndex].nom, joueurs[minIndex].prenom, joueurs[minIndex].age);
     printf("Le joueur le plus âgé est : %s %s, Âge: %d\n", joueurs[maxIndex].nom, joueurs[maxIndex].prenom, joueurs[maxIndex].age);
     break;
-
-
-
             default:
                 printf("Choix invalide.\n");
                 break;
@@ -365,7 +362,7 @@ void Statistiques(){
     }
 int main() {
     int choix = 0;
-
+    
     do {
         printf("******* Menu *******\n");
         printf("1. Ajouter un joueur.\n");
