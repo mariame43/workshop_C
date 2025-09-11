@@ -21,7 +21,7 @@ void tripe(int nombre[],int taille){
 int i , j ;
 for ( i = 0; i < taille - 1 ; i++)
 {
-    for ( j = 0; i < taille - i - 1 ; j++)
+    for ( j = 0; j < taille - i - 1 ; j++)
     {
         if (nombre[j]>nombre[j+1])
         {
