@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>           
 
+
 struct joueur {
     int id, numeroMaillot, age, buts;
     char nom[50];
@@ -27,14 +28,15 @@ int id = 10;
 
                                     //   ********* Ajouter un joueur *************
 void Ajouter_joueur() {
-    struct joueur Nv;  // Déclarer une nouvelle variable "Nv" contenant les informations
+    struct joueur Nv;  // Déclarer une nouvelle variable "Nv" 
 
     Nv.id = id;
     id = id + 1;
-    int choix2 = 0;
+    int choix2;
 
     printf("1. Ajouter un nouveau joueur\n");
     printf("2. Ajouter plusieurs joueurs en une seule opération\n");
+    printf("Votre choix est :");
     scanf("%d", &choix2);
 
     if (choix2 == 1) {
@@ -67,7 +69,7 @@ void Ajouter_joueur() {
         for (int i = 0; i < n; i++) {
             Nv.id = id;
             id = id + 1;
-            printf("Joueur numéro %d\n", i + 1);
+            printf("Joueur numéro %d:\n", i + 1);
 
             printf("Nom: ");
             scanf("%s", Nv.nom);
@@ -163,14 +165,14 @@ void Afficher_joueur() {
 // Modifier un joueur
 void Modifier_joueur() {
     char nom[50];
-    printf("Entrer le nom du joueur à modifier: ");
+    printf("Entrer le nom du joueur à modifier: \n");
     scanf("%s", nom);
-
+        
     int trouve = 0;
     for (int i = 0; i < nbjoueurs; i++) {
         if (strcmp(joueurs[i].nom, nom) == 0) {
-            trouve = 1;
             printf("Joueur trouvé : %s %s\n", joueurs[i].nom, joueurs[i].prenom);
+            trouve = 1;
             printf("1. Modifier le poste\n");
             printf("2. Modifier l'âge\n");
             printf("3. Modifier le nombre de buts\n");
@@ -222,6 +224,7 @@ void Supprimer_joueur() {
 
     for (int i = 0; i < nbjoueurs; i++) {
         if (joueurs[i].id == id) {
+            printf("Le joueur trouve : %s %s\n",joueurs[i].nom,joueurs[i].prenom);
             for (int j = i; j < nbjoueurs - 1; j++) {
                 joueurs[j] = joueurs[j + 1];
             }
@@ -307,7 +310,7 @@ void Statistiques(){
            break;
            case 3:
             int x, trouve =0;          // declarer nouvelle variable nommee "trouve" pour savoir si un joueur a ete trouve ou non 
-            printf("Entre le nombre de but x :");
+            printf("Entre le nombre de but x :\n");
             scanf("%d",&x);
             for (int i = 0; i < nbjoueurs; i++)
          {
@@ -360,6 +363,8 @@ void Statistiques(){
             }
 
     }
+    
+
 int main() {
     int choix = 0;
 
